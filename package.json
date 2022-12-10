@@ -9,11 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@icon-park/vue-next": "^1.4.2",
     "axios": "^1.2.1",
     "dayjs": "^1.11.7",
     "element-plus": "^2.2.26",
     "lodash": "^4.17.21",
     "pinia": "^2.0.27",
+    "swiper": "^8.4.5",
     "vue": "^3.2.41",
     "vue-router": "^4.1.6"
   },
