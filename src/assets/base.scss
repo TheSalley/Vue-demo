@@ -22,4 +22,6 @@ body {
     "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
 }
 
-
+.hover-text {
+  @apply hover:text-emerald-400 cursor-pointer;
+}

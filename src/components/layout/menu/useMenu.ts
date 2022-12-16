@@ -1,4 +1,11 @@
-import { ref, reactive } from "vue";
+/**
+ * 
+ *@params currentKey 
+ *  
+ */  
+
+
+import { ref, watch } from "vue";
 import { Menu, Menus } from "../../../interface/menu";
 import {
   Planet,
@@ -74,18 +81,25 @@ export function useMenu() {
     },
   ];
 
-  const route = useRoute()
-  const router = useRouter()
+  const route = useRoute();
+  const router = useRouter();
 
-  
+  const currentKey = ref(route.meta.menu);
 
-  const click = async () => {
-    await router.push({
+  watch(
+    () => route.meta.menu,
+    (menu) => (currentKey.value = menu)
+  );
 
-    })
-  }
+  const click = async (menu: Menu) => {
+    await router.replace({
+      name: menu.key,
+    });
+  };
 
   return {
     menus,
-  }
+    currentKey,
+    click,
+  };
 }

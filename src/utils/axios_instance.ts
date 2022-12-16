@@ -8,6 +8,10 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   (config: AxiosRequestConfig) => {
+    config.params = {
+      ...config.params,
+      t: Date.now(),
+    };
     return config;
   },
   (error) => {

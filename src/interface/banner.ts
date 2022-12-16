@@ -3,5 +3,4 @@ export interface Banner {
   targetId: number;
   targetType: number;
   typeTitle: string;
-  banberId: number;
 }
