@@ -1,6 +1,7 @@
 import http from "../utils/http";
 import { type Banner } from "../interface/banner";
 import type { SearchSuggest, SearchHotDetail } from "../interface/search";
+import type { Personalized } from "../interface/personalized"
 
 /**
  * @function requestBanner 请求Banner 数据
@@ -32,7 +33,21 @@ export const requestSearchSuggest = async (keywords: string) => {
  */
 export const requestSearchHot = async () => {
   const { data } = await http.get<{ data: SearchHotDetail[] }>(
-    "search/hot/detail"
+    "/search/hot/detail"
   );
   return data;
 };
+
+
+/**
+ * @function
+ * @name Personalized 个性化推荐
+ */
+export const requestPersonalized = async () => {
+  const { result } = await http.get<{ result: Personalized[] }>(
+    "/personalized"
+  );
+  return result;
+};
+
+
