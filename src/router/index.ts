@@ -91,6 +91,16 @@ const router = createRouter({
           },
         },
         {
+          path: 'love',
+          name: 'love',
+          component: () => import("../view/love/Love.vue"),
+          meta: {
+            menu: 'love',
+            title: '我喜欢',
+            keepAlive: true
+          }
+        },
+        {
           path: "playlist",
           name: "playlist",
           component: () => import("../view/playlist/PlayList.vue"),

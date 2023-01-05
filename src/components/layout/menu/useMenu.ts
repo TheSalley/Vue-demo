@@ -1,7 +1,8 @@
 /**
  * 
- *@params currentKey 
- *  
+ *@param currentKey 当前选中项，由route 携带的值决定
+ *@param menus 菜单栏分组
+ *@function click 路由跳转函数  
  */  
 
 

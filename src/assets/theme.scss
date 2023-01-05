@@ -1,11 +1,14 @@
 .bg-main {
   @apply bg-gray-50;
+  @apply dark:bg-[#171718];
 }
 
 .hover-bg-main {
   @apply hover:bg-gray-200;
+  @apply dark:hover:bg-stone-700;
 }
 
 .text-main {
   @apply text-slate-700;
+  @apply dark:text-slate-200;
 }

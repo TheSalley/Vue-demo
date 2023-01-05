@@ -13,10 +13,16 @@ import { useRouter } from "vue-router";
 import { ref } from "vue";
 
 const iconSize = 22;
+let mode = ref(true);
+const router = useRouter();
 
 const changeThemeMode = () => {
-  
-}
+  window.document.documentElement.setAttribute(
+    "class",
+    mode.value ? "dark" : "light"
+  );
+  mode.value = !mode.value;
+};
 </script>
 <template>
   <div class="flex items-center justify-between h-14">
@@ -26,12 +32,14 @@ const changeThemeMode = () => {
         :size="iconSize"
         :stroke-width="2"
         class="icon-button"
+        @click="router.back()"
       />
       <IconPark
         :icon="Right"
         :size="iconSize"
         :stroke-width="2"
         class="icon-button"
+        @click="router.go(1)"
       />
       <div class="search ml-2">
         <SearchCom />
@@ -51,6 +59,12 @@ const changeThemeMode = () => {
 </template>
 
 <style lang="scss" scoped>
+.search {
+  @apply text-xs;
+  ::v-deep .el-input__wrapper {
+    @apply rounded-full text-xs bg-slate-100 dark:bg-stone-900;
+  }
+}
 .icon-button {
   @apply p-2 cursor-pointer;
   @apply hover:text-emerald-400;

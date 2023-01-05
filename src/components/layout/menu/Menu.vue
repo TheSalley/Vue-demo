@@ -7,14 +7,14 @@ const { menus, currentKey, click } = useMenu();
   <div class="bg-main bg-opacity-70 h-screen flex flex-col">
     <el-scrollbar>
       <div
-        class="mt-10 pl-6 pr-6 space-y-1.5"
-        v-for="(menu, index) in menus"
+        class="mt-10 px-6 space-y-1.5"
+        v-for="(menusItem, index) in menus"
         :key="index"
       >
-        <div class="menu-title text-main">{{ menu.name }}</div>
+        <div class="menu-title text-main">{{ menusItem.name }}</div>
         <div
           class="menu-item text-main hover-bg-main"
-          v-for="item in menu.menus"
+          v-for="item in menusItem.menus"
           :key="item.key"
           :class="{ active: item.key === currentKey }"
           @click="click(item)"
@@ -28,12 +28,12 @@ const { menus, currentKey, click } = useMenu();
 </template>
 <style lang="scss" scoped>
 .menu-title {
-  @apply text-xs pl-4 pr-4 pb-2;
+  @apply text-xs px-4 pb-2;
 }
 .menu-item {
-  @apply text-sm pl-4 pr-4 pt-1.5 pb-1.5 cursor-pointer flex;
+  @apply text-sm px-4 py-1.5 rounded cursor-pointer flex items-center transition-colors;
 }
 .active {
-  @apply cursor-default;
+  @apply cursor-default text-slate-50 bg-gradient-to-r from-teal-400 to-emerald-400;
 }
 </style>
