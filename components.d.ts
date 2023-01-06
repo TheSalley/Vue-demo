@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     Banner: typeof import('./src/components/common/Banner.vue')['default']
     CoverPlay: typeof import('./src/components/common/CoverPlay.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
+    ElDialog: typeof import('element-plus/es')['ElDialog']
     ElImage: typeof import('element-plus/es')['ElImage']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElPopover: typeof import('element-plus/es')['ElPopover']
@@ -26,5 +27,6 @@ declare module '@vue/runtime-core' {
     Search: typeof import('./src/components/layout/header/Search.vue')['default']
     SearchList: typeof import('./src/components/layout/header/SearchList.vue')['default']
     Title: typeof import('./src/components/common/Title.vue')['default']
+    UserInfo: typeof import('./src/components/layout/header/UserInfo.vue')['default']
   }
 }

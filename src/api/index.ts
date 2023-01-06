@@ -1,7 +1,7 @@
 import http from "../utils/http";
 import { type Banner } from "../interface/banner";
 import type { SearchSuggest, SearchHotDetail } from "../interface/search";
-import type { Personalized } from "../interface/personalized"
+import type { Personalized } from "../interface/personalized";
 
 /**
  * @function requestBanner 请求Banner 数据
@@ -38,10 +38,9 @@ export const requestSearchHot = async () => {
   return data;
 };
 
-
 /**
  * @function
- * @name Personalized 个性化推荐
+ * @name requestPersonalized 个性化推荐
  */
 export const requestPersonalized = async () => {
   const { result } = await http.get<{ result: Personalized[] }>(
@@ -50,4 +49,14 @@ export const requestPersonalized = async () => {
   return result;
 };
 
-
+/**
+ * @function
+ * @name requestLogin 请求登录
+ */
+export const requestLogin = async (phone: string, password: string) => {
+  return await http.get<{
+    code: number;
+    cookie: string;
+    token: string;
+  }>("/login/cellphone", { phone, password });
+};

@@ -12,3 +12,7 @@
   @apply text-slate-700;
   @apply dark:text-slate-200;
 }
+
+.hover-text {
+  @apply hover:text-emerald-400 cursor-pointer;
+}

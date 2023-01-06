@@ -2,7 +2,7 @@
 
 ## 0、描述
 
-学习
+学习 https://github.com/SmallRuralDog/vue3-music.git
 
 ## 1、tailwindcss
 
@@ -57,3 +57,5 @@ npm install -D unplugin-vue-components unplugin-auto-import
 ## 3、当前进度
 
 本地歌曲、下载歌曲、最近播放 3个路由未配置
+
+登录接口有问题

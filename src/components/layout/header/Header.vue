@@ -9,6 +9,7 @@ import {
 } from "@icon-park/vue-next";
 import IconPark from "../../common/IconPark.vue";
 import SearchCom from "./Search.vue";
+import UserInfo from "./UserInfo.vue";
 import { useRouter } from "vue-router";
 import { ref } from "vue";
 
@@ -46,6 +47,7 @@ const changeThemeMode = () => {
       </div>
     </div>
     <div class="flex items-center mr-5">
+      <UserInfo />
       <IconPark :icon="Mail" :stroke-width="2" class="icon-button" />
       <IconPark
         :icon="Platte"
