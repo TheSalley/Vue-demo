@@ -15,13 +15,22 @@ export const useUserStore = defineStore("user", () => {
 
   const login = async (phone: string, password: string) => {
     const res = await requestLogin(phone, password)
-    console.log(res);
+    if(res.code == 200) {
+      token.value = res.token
+      cookie.value = res.cookie
+      document.cookie = res.cookie
+      profile.value = res.profile
+      localStorage.setItem("USER-TOKEN", token.value)
+      localStorage.setItem("USER-COOKIE", cookie.value)
+      showLogin.value = false
+    }
     
   }
 
   return {
     showLogin,
     isLogin,
-    login
+    login,
+    profile
   }
 });

@@ -1,4 +1,9 @@
 <script setup lang="ts">
+/**
+ * @param {number} iconSize 图标尺寸
+ * @param {boolean} mode 主题色（浅还是暗）
+ * @function changeThemeMode 切换主题色
+ */
 import {
   HamburgerButton,
   Left,

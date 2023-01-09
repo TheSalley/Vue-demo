@@ -2,6 +2,7 @@ import http from "../utils/http";
 import { type Banner } from "../interface/banner";
 import type { SearchSuggest, SearchHotDetail } from "../interface/search";
 import type { Personalized } from "../interface/personalized";
+import { UserProfile } from "../interface/user";
 
 /**
  * @function requestBanner 请求Banner 数据
@@ -58,5 +59,17 @@ export const requestLogin = async (phone: string, password: string) => {
     code: number;
     cookie: string;
     token: string;
+    profile: UserProfile
   }>("/login/cellphone", { phone, password });
 };
+
+/**
+ * @function
+ * @name requestLoginStatus 请求登录状态信息
+ */
+export const requestLoginStatus = async () => {
+  return await http.get<{data: {
+    code: number,
+    profile: UserProfile
+  }}>("/login/status")
+}

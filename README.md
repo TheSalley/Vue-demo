@@ -58,4 +58,4 @@ npm install -D unplugin-vue-components unplugin-auto-import
 
 本地歌曲、下载歌曲、最近播放 3个路由未配置
 
-登录接口有问题
+账号退出功能未写
