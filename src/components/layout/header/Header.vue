@@ -68,7 +68,7 @@ const changeThemeMode = () => {
 <style lang="scss" scoped>
 .search {
   @apply text-xs;
-  ::v-deep .el-input__wrapper {
+  :deep(.el-input__wrapper)  {
     @apply rounded-full text-xs bg-slate-100 dark:bg-stone-900;
   }
 }

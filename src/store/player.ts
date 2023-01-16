@@ -7,10 +7,15 @@ const KEYS = {
 };
 
 /**
- * @param audio 音乐媒体
- * @param loopType 循环模式 0: 单曲 1: 列表 2: 随机
- * @param volume 音量
- * @param playList 播放列表
+ * @param { object } audio 音乐媒体实例
+ * @param { number } loopType 循环模式 0: 单曲 1: 列表 2: 随机
+ * @param { number } volume 音量
+ * @param { array } playList 播放列表
+ * @param { boolean } isPlaying 是否在播放中
+ *
+ * @function toggleLoop 切换歌曲循环模式
+ * @function togglePlay 播放/暂停
+ * @function setVolumn 音量设置
  */
 
 export const usePlayerStore = defineStore("player", () => {
@@ -42,12 +47,42 @@ export const usePlayerStore = defineStore("player", () => {
     audio.value.volume = volume / 100;
   };
 
-  let pushPlayList = () => {
+  let pushPlayList = () => {};
 
-  } 
+  let togglePlay = () => {
+    isPlaying.value = !isPlaying.value;
+    if (!isPlaying.value) {
+      audio.value.pause();
+    } else {
+      audio.value.play();
+    }
+  };
+
+  let toggleLoop = () => {
+    if (loopType.value == 2) {
+      loopType.value = 0;
+    } else {
+      loopType.value++;
+    }
+  };
+
+  let setVolumn = (n: number) => {
+    n = n > 100 ? 100 : n < 0 ? 0 : n;
+    volume = n;
+    console.log(volume);
+
+    audio.value.volume = n / 100;
+    localStorage.setItem("PLAYER-VOLUME", n.toString());
+  };
 
   return {
+    loopType,
+    isPlaying,
     duration,
-    currentTime
-  }
+    currentTime,
+    volume,
+    toggleLoop,
+    togglePlay,
+    setVolumn,
+  };
 });

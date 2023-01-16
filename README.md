@@ -59,3 +59,12 @@ npm install -D unplugin-vue-components unplugin-auto-import
 本地歌曲、下载歌曲、最近播放 3个路由未配置
 
 账号退出功能未写
+
+## footer
+
+- [ ] 上一曲、下一曲
+
++ 问题
+`el-popover` 最小宽度为150px，改源码为auto。
+node_modules\element-plus\theme-chalk\el-popover.css
+
