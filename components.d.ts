@@ -23,6 +23,7 @@ declare module '@vue/runtime-core' {
     Header: typeof import('./src/components/layout/header/Header.vue')['default']
     IconPark: typeof import('./src/components/common/IconPark.vue')['default']
     Menu: typeof import('./src/components/layout/menu/Menu.vue')['default']
+    MoreText: typeof import('./src/components/common/MoreText.vue')['default']
     PlayController: typeof import('./src/components/layout/footer/PlayController.vue')['default']
     PlayerSlider: typeof import('./src/components/layout/footer/PlayerSlider.vue')['default']
     PlayList: typeof import('./src/components/layout/playList/PlayList.vue')['default']

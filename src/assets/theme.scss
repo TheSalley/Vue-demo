@@ -16,3 +16,19 @@
 .hover-text {
   @apply hover:text-emerald-400 cursor-pointer;
 }
+
+.text-dc {
+  @apply text-slate-400;
+  @apply dark:text-slate-400;
+}
+
+.button {
+  @apply flex justify-center items-center bg-emerald-500 rounded-full  h-8 text-sm transition-all;
+  @apply text-white;
+  @apply hover:bg-emerald-700;
+}
+
+.button-outline {
+  @apply flex justify-center items-center rounded-full h-8 text-sm transition-all border;
+  @apply hover:border-emerald-500 hover:text-emerald-500;
+}

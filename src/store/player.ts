@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import type { Song, SongUrl } from "../interface/song";
+import { requestSongUrl } from "../api"
 
 const KEYS = {
   volume: "PLAYER-VOLUME",
@@ -75,6 +76,13 @@ export const usePlayerStore = defineStore("player", () => {
     localStorage.setItem("PLAYER-VOLUME", n.toString());
   };
 
+  let play = async (v: number) => {
+    if(id.value == v) return;
+    const data = await requestSongUrl(v)
+    console.log(data);
+    
+  }
+
   return {
     loopType,
     isPlaying,
@@ -84,5 +92,6 @@ export const usePlayerStore = defineStore("player", () => {
     toggleLoop,
     togglePlay,
     setVolumn,
+    play
   };
 });

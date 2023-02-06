@@ -3,7 +3,8 @@ export interface PlayListDetail {
   name: string;
   coverImgUrl: string;
   creator: Creator;
-  tags: string[]
+  tags: string[];
+  description: string;
 }
 
 export interface Creator {

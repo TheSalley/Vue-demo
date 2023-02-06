@@ -5,6 +5,7 @@ import type { Personalized } from "../interface/personalized";
 import type { UserProfile } from "../interface/user";
 import type { TopListDetail } from "../interface/toplist_detail";
 import type { PlayListDetail } from "../interface/playlist";
+import type { Song, SongUrl } from "../interface/song";
 
 /**
  * @function requestBanner 请求Banner 数据
@@ -96,6 +97,35 @@ export const requestTopListDetailData = async () => {
 export const requestPlayListDetail = async (id: number, s: number = 8) => {
   const { playlist } = await http.get<{
     playlist: PlayListDetail[];
-  }>("/playlist/detail");
+  }>("/playlist/detail", {
+    id,
+    s,
+  });
   return playlist;
+};
+
+/**
+ * @function
+ * @name requestPlayListTrackAll 根据榜单请求相关歌曲列表
+ */
+export const requestPlayListTrackAll = async (id: number) => {
+  const { songs } = await http.get<{
+    songs: Song[];
+  }>("/playlist/track/all", {
+    id,
+  });
+  return songs;
+};
+
+/**
+ * @function
+ * @name requestSongUrl 根据id 请求歌曲播放地址
+ */
+export const requestSongUrl = async (id: number) => {
+  const { data } = await http.get<{
+    data: SongUrl[];
+  }>("/song/url", {
+    id,
+  });
+  return data[0];
 };
