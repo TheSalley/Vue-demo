@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import type { Song, SongUrl } from "../interface/song";
 import { requestSongUrl } from "../api"
 
@@ -48,7 +48,7 @@ export const usePlayerStore = defineStore("player", () => {
     audio.value.volume = volume / 100;
   };
 
-  let pushPlayList = () => {};
+  let pushPlayList = () => { };
 
   let togglePlay = () => {
     isPlaying.value = !isPlaying.value;
@@ -77,10 +77,14 @@ export const usePlayerStore = defineStore("player", () => {
   };
 
   let play = async (v: number) => {
-    if(id.value == v) return;
+    if (id.value == v) return;
     const data = await requestSongUrl(v)
-    console.log(data);
-    
+    // console.log(data);
+    audio.value.src = data.url
+    isPlaying.value = true
+    audio.value.play()
+    console.log(audio.value)
+
   }
 
   return {
@@ -95,3 +99,11 @@ export const usePlayerStore = defineStore("player", () => {
     play
   };
 });
+
+
+export const userPlayerInit = () => {
+  let timer;
+  onMounted(() => {
+
+  })
+}
