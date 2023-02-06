@@ -48,6 +48,8 @@ transition-colors => transition-property: background-color, border-color, color,
 
 bg-gradient-to-r => background-image: linear-gradient(to right, var(--tw-gradient-stops));
 
+leading-normal => line-height: 1.5;
+
 ## 2、vite 自动引入 element-plus
 
 ```javascript

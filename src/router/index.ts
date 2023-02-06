@@ -40,6 +40,24 @@ const router = createRouter({
               },
             },
             {
+              path: "sound_station",
+              name: "sound_station",
+              component: () => import("../view/music/sound_station/Sound-Station.vue"),
+              meta: {
+                menu: "music",
+                keepAlive: true,
+              },
+            },
+            {
+              path: "toplist",
+              name: "toplist",
+              component: () => import("../view/music/toplist/TopList.vue"),
+              meta: {
+                menu: "music",
+                keepAlive: true,
+              },
+            },
+            {
               path: "toplist",
               name: "toplist",
               component: () => import("../view/music/toplist/TopList.vue"),
@@ -91,14 +109,14 @@ const router = createRouter({
           },
         },
         {
-          path: 'love',
-          name: 'love',
+          path: "love",
+          name: "love",
           component: () => import("../view/love/Love.vue"),
           meta: {
-            menu: 'love',
-            title: '我喜欢',
-            keepAlive: true
-          }
+            menu: "love",
+            title: "我喜欢",
+            keepAlive: true,
+          },
         },
         {
           path: "playlist",

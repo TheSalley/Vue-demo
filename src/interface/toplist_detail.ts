@@ -1,3 +1,14 @@
 export interface TopListDetail {
-    subscribers: any[];
+  id: number;
+  name: string;
+  updateFrequency: string;
+  updaeTime: number;
+  coverImgUrl: string;
+  playCount: number;
+  tracks: TopListDetailTracks[];
+}
+
+export interface TopListDetailTracks {
+  first: string;
+  second: string;
 }

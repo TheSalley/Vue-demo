@@ -1,8 +1,10 @@
 import http from "../utils/http";
-import { type Banner } from "../interface/banner";
+import type { Banner } from "../interface/banner";
 import type { SearchSuggest, SearchHotDetail } from "../interface/search";
 import type { Personalized } from "../interface/personalized";
-import { UserProfile } from "../interface/user";
+import type { UserProfile } from "../interface/user";
+import type { TopListDetail } from "../interface/toplist_detail";
+import type { PlayListDetail } from "../interface/playlist";
 
 /**
  * @function requestBanner 请求Banner 数据
@@ -59,7 +61,7 @@ export const requestLogin = async (phone: string, password: string) => {
     code: number;
     cookie: string;
     token: string;
-    profile: UserProfile
+    profile: UserProfile;
   }>("/login/cellphone", { phone, password });
 };
 
@@ -68,8 +70,32 @@ export const requestLogin = async (phone: string, password: string) => {
  * @name requestLoginStatus 请求登录状态信息
  */
 export const requestLoginStatus = async () => {
-  return await http.get<{data: {
-    code: number,
-    profile: UserProfile
-  }}>("/login/status")
-}
+  return await http.get<{
+    data: {
+      code: number;
+      profile: UserProfile;
+    };
+  }>("/login/status");
+};
+
+/**
+ * @function
+ * @name requestTopListDetailData 请求排行榜详情数据
+ */
+export const requestTopListDetailData = async () => {
+  const { list } = await http.get<{
+    list: TopListDetail[];
+  }>("/toplist/detail");
+  return list;
+};
+
+/**
+ * @function
+ * @name requestPlayListDetail 请求相关歌曲列表
+ */
+export const requestPlayListDetail = async (id: number, s: number = 8) => {
+  const { playlist } = await http.get<{
+    playlist: PlayListDetail[];
+  }>("/playlist/detail");
+  return playlist;
+};
