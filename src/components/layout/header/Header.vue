@@ -16,7 +16,7 @@ import IconPark from "../../common/IconPark.vue";
 import SearchCom from "./Search.vue";
 import UserInfo from "./UserInfo.vue";
 import { useRouter } from "vue-router";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 const iconSize = 22;
 let mode = ref(true);
@@ -29,6 +29,8 @@ const changeThemeMode = () => {
   );
   mode.value = !mode.value;
 };
+
+onMounted(() => window.document.documentElement.setAttribute("class", "light"));
 </script>
 <template>
   <div class="flex items-center justify-between h-14">
@@ -68,7 +70,7 @@ const changeThemeMode = () => {
 <style lang="scss" scoped>
 .search {
   @apply text-xs;
-  :deep(.el-input__wrapper)  {
+  :deep(.el-input__wrapper) {
     @apply rounded-full text-xs bg-slate-100 dark:bg-stone-900;
   }
 }

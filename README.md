@@ -6,19 +6,30 @@
 
 ## 1、tailwindcss
 
-w-screen => 100vw
+w-screen => width: 100vw;
 
-w-56 => 14rem
-
-flex => display: flex
-
-flex-1 => flex: 1 1 0%;
+flex => display: flex;
 
 flex-col => flex-direction: column;
 
-items-stretch => align-items: stretch
+flex-1 => flex: 1 1 0%;
 
-flex-shrink-0 => flex-shrink: 0
+flex-shrink-0 => flex-shrink: 0;
+
+items-stretch => align-items: stretch;
+
+overflow-hidden => overflow: hidden;
+
+w-56 => 14rem
+
+
+
+
+
+
+
+
+
 
 container => width because breakpoint
 

@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import type { Song, SongUrl } from "../interface/song";
-import { requestSongUrl } from "../api"
+import { requestSongUrl } from "../api";
 
 const KEYS = {
   volume: "PLAYER-VOLUME",
@@ -13,6 +13,7 @@ const KEYS = {
  * @param { number } volume 音量
  * @param { array } playList 播放列表
  * @param { boolean } isPlaying 是否在播放中
+ * @param { boolean } showPlayList 是否展示右侧抽屉的播放列表
  *
  * @function toggleLoop 切换歌曲循环模式
  * @function togglePlay 播放/暂停
@@ -24,7 +25,7 @@ export const usePlayerStore = defineStore("player", () => {
   let loopType = ref(0);
   let volume = Number(localStorage.getItem(KEYS.volume)) || 60;
   let playList = ref([] as Song[]);
-  let showPlayList = ref(false);
+  let showPlayList = ref(true);
   let id = ref(0);
   let url = ref("");
   let songUrl = ref({} as SongUrl);
@@ -77,11 +78,10 @@ export const usePlayerStore = defineStore("player", () => {
   };
 
   let play = async (v: number) => {
-    if(id.value == v) return;
-    const data = await requestSongUrl(v)
+    if (id.value == v) return;
+    const data = await requestSongUrl(v);
     console.log(data);
-    
-  }
+  };
 
   return {
     loopType,
@@ -89,9 +89,10 @@ export const usePlayerStore = defineStore("player", () => {
     duration,
     currentTime,
     volume,
+    showPlayList,
     toggleLoop,
     togglePlay,
     setVolumn,
-    play
+    play,
   };
 });
