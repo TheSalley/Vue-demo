@@ -49,7 +49,7 @@ export const usePlayerStore = defineStore("player", () => {
     audio.value.volume = volume / 100;
   };
 
-  let pushPlayList = () => { };
+  let pushPlayList = () => {};
 
   let togglePlay = () => {
     isPlaying.value = !isPlaying.value;
@@ -79,20 +79,14 @@ export const usePlayerStore = defineStore("player", () => {
 
   let play = async (v: number) => {
     if (id.value == v) return;
-<<<<<<< HEAD
-    const data = await requestSongUrl(v);
-    console.log(data);
-  };
-=======
-    const data = await requestSongUrl(v)
-    // console.log(data);
-    audio.value.src = data.url
-    isPlaying.value = true
-    audio.value.play()
-    console.log(audio.value)
 
-  }
->>>>>>> bb5ae12d21300fb3cd40dfd73f21ea342ee80fe2
+    const data = await requestSongUrl(v);
+    // console.log(data);
+    audio.value.src = data.url;
+    isPlaying.value = true;
+    audio.value.play();
+    console.log(audio.value);
+  };
 
   return {
     loopType,
@@ -108,10 +102,7 @@ export const usePlayerStore = defineStore("player", () => {
   };
 });
 
-
 export const userPlayerInit = () => {
   let timer;
-  onMounted(() => {
-
-  })
-}
+  onMounted(() => {});
+};
