@@ -1,3 +1,8 @@
 <template>
-    <div>精选</div>
+  <div>
+    <Banner />
+  </div>
 </template>
+<script setup lang="ts">
+import Banner from "../../../components/common/Banner.vue";
+</script>

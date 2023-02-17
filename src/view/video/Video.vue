@@ -6,7 +6,7 @@
         <el-popover width="60%" placement="bottom-start" popper-style="padding:0;">
             <!-- <template></template> -->
             <div>
-                <div class="text-xl pt-5 pl-5 hover-text">全部视频</div>
+                <div class="text-xl pt-5 pl-5 __hover-text">全部视频</div>
                 <div class="h-96 py-5 pl-5">
                     <el-scrollbar>
                         <div class="text-xs gap-5 grid grid-flow-row grid-cols-5"></div>

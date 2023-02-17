@@ -3,6 +3,11 @@
   @apply dark:bg-[#171718];
 }
 
+.__bg-main1 {
+  @apply bg-gray-50;
+  @apply dark:bg-[#1e1e1f];
+}
+
 .__hover-bg-main {
   @apply hover:bg-gray-200;
   @apply dark:hover:bg-stone-700;
@@ -13,7 +18,7 @@
   @apply dark:text-slate-200;
 }
 
-.hover-text {
+.__hover-text {
   @apply hover:text-emerald-400 cursor-pointer;
 }
 

@@ -27,7 +27,7 @@ const loginSubmit = () => {
 </script>
 
 <template>
-  <div class="flex items-center cursor-pointer hover-text">
+  <div class="flex items-center cursor-pointer __hover-text">
     <el-avatar
       size="small"
       round

@@ -1,6 +1,5 @@
 <template>
-  <div class="h-screen flex flex-col __bg-main">
-    <img src="https://y.qq.com/mediastyle/yqq/img/logo.png?max_age=2592000" alt="" class="logo"/>
+  <div class="__bg-main bg-opacity-70 h-screen flex flex-col">
     <el-scrollbar>
       <div
         class="mt-10 px-6 space-y-1.5"
@@ -22,7 +21,6 @@
     </el-scrollbar>
   </div>
 </template>
-
 <script setup lang="ts">
 import { useMenu } from "./useMenu";
 import IconPark from "../../common/IconPark.vue";

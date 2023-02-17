@@ -23,16 +23,16 @@
             title="播放"
             :icon="PlayOne"
             size="16"
-            class="hover-text"
+            class="__hover-text"
             @click="play(song.id)"
           />
-          <IconPark title="添加到" :icon="Add" size="16" class="hover-text" />
-          <IconPark title="下载" :icon="DownTwo" size="16" class="hover-text" />
+          <IconPark title="添加到" :icon="Add" size="16" class="__hover-text" />
+          <IconPark title="下载" :icon="DownTwo" size="16" class="__hover-text" />
           <IconPark
             title="更多操作"
             :icon="MoreTwo"
             size="16"
-            class="hover-text"
+            class="__hover-text"
           />
         </div>
       </div>

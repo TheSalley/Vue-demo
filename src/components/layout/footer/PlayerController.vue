@@ -4,25 +4,25 @@
       :icon="loopType === 0 ? PlayOnce : loopType === 1 ? LoopOnce : ShuffleOne"
       size="20"
       :stroke-width="3"
-      class="hover-text"
+      class="__hover-text"
       @click="toggleLoop"
     />
-    <IconPark :icon="GoStart" size="28" theme="filled" class="hover-text" />
+    <IconPark :icon="GoStart" size="28" theme="filled" class="__hover-text" />
     <IconPark
       :icon="isPlaying ? Play : PauseOne"
       size="45"
       theme="filled"
-      class="hover-text text-emerald-400"
+      class="__hover-text text-emerald-400"
       @click="togglePlay"
     />
-    <IconPark :icon="GoEnd" size="28" class="hover-text" />
+    <IconPark :icon="GoEnd" size="28" class="__hover-text" />
     <el-popover placement="top" width="50px">
       <template #reference>
         <IconPark
           :icon="VolumeSmall"
           size="20"
           :stroke-width="3"
-          class="hover-text"
+          class="__hover-text"
         />
       </template>
       <PlayVolumeSlider />

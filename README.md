@@ -79,3 +79,6 @@ npm install -D unplugin-vue-components unplugin-auto-import
 `el-popover` 最小宽度为150px，改源码为auto。
 node_modules\element-plus\theme-chalk\el-popover.css
 
+## banner 适配屏幕
+
+有问题

@@ -9,7 +9,7 @@
             :key="menu.name"
             :label="menu.label"
             :name="menu.name"
-            class="text-main"
+            class="__text-main"
           ></el-tab-pane>
         </el-tabs>
       </div>

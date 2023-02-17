@@ -25,7 +25,7 @@ export const usePlayerStore = defineStore("player", () => {
   let loopType = ref(0);
   let volume = Number(localStorage.getItem(KEYS.volume)) || 60;
   let playList = ref([] as Song[]);
-  let showPlayList = ref(true);
+  let showPlayList = ref(false);
   let id = ref(0);
   let url = ref("");
   let songUrl = ref({} as SongUrl);
@@ -87,8 +87,20 @@ export const usePlayerStore = defineStore("player", () => {
     audio.value.play();
     console.log(audio.value);
   };
+  // 进度条变化
+  let onSliderChange = (val: number) => {
+    currentTime.value = val;
+    sliderInput.value = false;
+    audio.value.currentTime = val;
+  };
+  // 拖动进度条
+  let onSliderInput = (val: number) => {
+    sliderInput.value = true;
+  };
 
   return {
+    song,
+    songUrl,
     loopType,
     isPlaying,
     duration,
@@ -99,6 +111,8 @@ export const usePlayerStore = defineStore("player", () => {
     togglePlay,
     setVolumn,
     play,
+    onSliderChange,
+    onSliderInput,
   };
 });
 
