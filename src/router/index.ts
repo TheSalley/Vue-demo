@@ -119,14 +119,44 @@ const router = createRouter({
           },
         },
         {
-          path: "playlist",
-          name: "playlist",
-          component: () => import("../view/playlist/PlayList.vue"),
+          path: "local",
+          name: "local",
+          component: () => import("../view/local/Local.vue"),
+          meta: {
+            menu: "local",
+            title: "本地歌曲",
+            keepAlive: true,
+          },
+        },
+        {
+          path: "download",
+          name: "download",
+          component: () => import("../view/download/Download.vue"),
+          meta: {
+            menu: "download",
+            title: "下载歌曲",
+            keepAlive: true,
+          },
+        },
+        {
+          path: "recently",
+          name: "recently",
+          component: () => import("../view/recently/Recently.vue"),
+          meta: {
+            menu: "recently",
+            title: "最近播放",
+            keepAlive: true,
+          },
         },
         {
           path: "album",
           name: "album",
           component: () => import("../view/album/Album.vue"),
+        },
+        {
+          path: "playlist",
+          name: "playlist",
+          component: () => import("../view/playlist/PlayList.vue"),
         },
       ],
     },

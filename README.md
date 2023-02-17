@@ -20,10 +20,21 @@ items-stretch => align-items: stretch;
 
 overflow-hidden => overflow: hidden;
 
-w-56 => 14rem
+w-4 => width: 1rem;
 
+space-y-4 =>  --tw-space-x-reverse: 0;
+                margin-right: calc(1rem * var(--tw-space-x-reverse));
+                margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 
+rounded => border-radius: 0.25rem;
 
+transition-colors => transition-property:               background-color, border-color, color, fill, stroke;
+                        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                        transition-duration: 150ms;
+
+bg-gradient-to-r => background-image: linear-gradient(to right, var(--tw-gradient-stops));
+
+truncate => 超出显示省略号
 
 
 
@@ -33,31 +44,16 @@ w-56 => 14rem
 
 container => width because breakpoint
 
-px-5 => left and right padding 1.25rem
-
-pt-8 => top padding 2rem
-
-text-3xl => font-size line-height
-
 -mx-2.5 => nagative left and right margin
 
-truncate => 超出显示省略号
 
-bg-opacity-70 => --tw-bg-opacity: 0.7;
 
-space-y-1.5 => --tw-space-y-reverse: 0;
-                margin-top: calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));
-                margin-bottom: calc(0.375rem * var(--tw-space-y-reverse));
 
 hover-bg-main => hover 状态下应用bg-main 类
 
-rounded	=> border-radius: 0.25rem;
 
-transition-colors => transition-property: background-color, border-color, color, fill, stroke;
-                    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-                    transition-duration: 150ms;
 
-bg-gradient-to-r => background-image: linear-gradient(to right, var(--tw-gradient-stops));
+
 
 leading-normal => line-height: 1.5;
 
@@ -68,6 +64,8 @@ npm install -D unplugin-vue-components unplugin-auto-import
 ```
 
 ## 3、当前进度
+
+- [x] menu 已写完 
 
 本地歌曲、下载歌曲、最近播放 3个路由未配置
 

@@ -5,17 +5,17 @@
       <Menu />
     </div>
     <!-- 右边内容展示区 -->
-    <div class="flex flex-1 flex-col">
+    <div class="flex flex-col flex-1">
       <div class="h-14">
         <Header />
       </div>
-      <div class="flex-1 overflow-hidden">
+      <!-- <div class="flex-1 overflow-hidden">
         <el-scrollbar>
           <div class="container mx-auto">
             <RouterView />
           </div>
         </el-scrollbar>
-      </div>
+      </div> -->
       <div class="h-20">
         <Footer />
       </div>
