@@ -3,7 +3,7 @@
     <template v-if="show">
       <span v-if="isShow">{{ text.substring(0, end) }}...</span>
       <span v-else>{{ text }}...</span>
-      <span class="ml-5 text-gray-700 hover-text" @click="isShow = !isShow">
+      <span class="ml-5 text-gray-700 __hover-text" @click="isShow = !isShow">
         [{{ isShow ? "收起" : "详情" }}]
       </span>
     </template>

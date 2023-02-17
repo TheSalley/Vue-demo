@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import { useMenu } from "./useMenu";
-import IconPark from "../../common/IconPark.vue";
-const { menus, currentKey, click } = useMenu();
-</script>
 <template>
   <div class="bg-main bg-opacity-70 h-screen flex flex-col">
     <el-scrollbar>
@@ -11,9 +6,9 @@ const { menus, currentKey, click } = useMenu();
         v-for="(menusItem, index) in menus"
         :key="index"
       >
-        <div class="menu-title text-main">{{ menusItem.name }}</div>
+        <div class="menu-title __text-main">{{ menusItem.name }}</div>
         <div
-          class="menu-item text-main hover-bg-main"
+          class="menu-item __text-main hover-bg-main"
           v-for="item in menusItem.menus"
           :key="item.key"
           :class="{ active: item.key === currentKey }"
@@ -26,6 +21,11 @@ const { menus, currentKey, click } = useMenu();
     </el-scrollbar>
   </div>
 </template>
+<script setup lang="ts">
+import { useMenu } from "./useMenu";
+import IconPark from "../../common/IconPark.vue";
+const { menus, currentKey, click } = useMenu();
+</script>
 <style lang="scss" scoped>
 .menu-title {
   @apply text-xs px-4 pb-2;

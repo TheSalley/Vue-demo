@@ -87,8 +87,20 @@ export const usePlayerStore = defineStore("player", () => {
     audio.value.play();
     console.log(audio.value);
   };
+  // 进度条变化
+  let onSliderChange = (val: number) => {
+    currentTime.value = val;
+    sliderInput.value = false;
+    audio.value.currentTime = val;
+  };
+  // 拖动进度条
+  let onSliderInput = (val: number) => {
+    sliderInput.value = true;
+  };
 
   return {
+    song,
+    songUrl,
     loopType,
     isPlaying,
     duration,
@@ -99,6 +111,8 @@ export const usePlayerStore = defineStore("player", () => {
     togglePlay,
     setVolumn,
     play,
+    onSliderChange,
+    onSliderInput,
   };
 });
 

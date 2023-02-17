@@ -13,7 +13,7 @@
           <span class="ml-2">{{ playlist.creator.nickname }}</span>
           <div class="flex ml-5 text-dc">
             <div
-              class="ml-2 hover-text"
+              class="ml-2 __hover-text"
               v-for="tag in playlist.tags"
               :key="tag"
             >

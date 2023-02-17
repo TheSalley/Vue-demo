@@ -37,7 +37,7 @@ onMounted(() => {
               <div
                 v-for="(item, index) in searchHotData"
                 :key="index"
-                class="py-2.5 px-2.5 cursor-pointer flex justify-between items-center text-xs hover-text"
+                class="py-2.5 px-2.5 cursor-pointer flex justify-between items-center text-xs __hover-text"
               >
                 <div>
                   <span class="mr-1">{{ index + 1 }}.</span>

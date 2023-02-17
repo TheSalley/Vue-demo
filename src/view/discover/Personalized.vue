@@ -23,7 +23,7 @@ onMounted(() => {
     >
       <div class="" v-for="(item,index) in sampleSize(personalized, 10)" :key="index">
         <CoverPlay :name="item.name" :pic-url="item.picUrl"/>
-        <div class="mt-2 text-xs text-main">{{ item.name }}</div>
+        <div class="mt-2 text-xs __text-main">{{ item.name }}</div>
     </div>
     </div>
   </div>
