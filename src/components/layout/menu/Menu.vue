@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-main bg-opacity-70 h-screen flex flex-col">
+  <div class="__bg-main bg-opacity-70 h-screen flex flex-col">
     <el-scrollbar>
       <div
         class="mt-10 px-6 space-y-1.5"
@@ -8,7 +8,7 @@
       >
         <div class="menu-title __text-main">{{ menusItem.name }}</div>
         <div
-          class="menu-item __text-main hover-bg-main"
+          class="menu-item __text-main __hover-bg-main"
           v-for="item in menusItem.menus"
           :key="item.key"
           :class="{ active: item.key === currentKey }"

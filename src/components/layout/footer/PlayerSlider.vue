@@ -25,6 +25,7 @@ let { currentTime, duration } = storeToRefs(usePlayerStore());
     .el-slider__bar {
       height: 2px;
       border-radius: 0;
+      @apply dark:bg-[#343435];
     }
     .el-slider__button-wrapper {
       @apply opacity-0 transition-opacity;

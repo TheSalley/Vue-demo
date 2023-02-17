@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-stretch h-20">
+  <div class="flex flex-col items-stretch h-20 __bg-main1 pt-1">
     <PlayerSlider />
     <div class="flex grow px-5 items-center">
       <div class="flex-1">
