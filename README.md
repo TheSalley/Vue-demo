@@ -81,4 +81,5 @@ node_modules\element-plus\theme-chalk\el-popover.css
 
 ## banner 适配屏幕
 
-有问题
+屏幕适配
+swiper 的问题

@@ -1,3 +1,15 @@
+<template>
+  <div class="cover-play-image">
+    <el-image
+      :src="picUrl"
+      :alt="name"
+      class="w-full bg-gray-50 object-cover"
+    />
+    <div class="flex justify-center items-center">
+      <IconPark :icon="PlayOne" theme="filled"/>
+    </div>
+  </div>
+</template>
 <script setup lang="ts">
 import { PlayOne, Play, Headset } from "@icon-park/vue-next";
 import IconPark from "./IconPark.vue";
@@ -11,12 +23,6 @@ defineProps<{
   video?: boolean;
 }>();
 </script>
-<template>
-  <div class="cover-play-image">
-    <el-image :src="picUrl" :alt="name" class="w-full bg-gray-50 object-cover"/>
-    <div class="flex justify-center items-center"></div>
-  </div>
-</template>
 
 <style lang="scss" scoped>
 .cover-play-image {

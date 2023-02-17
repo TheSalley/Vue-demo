@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { type Banner } from "../interface/banner";
+import type { Banner } from "../interface/banner";
 import { requestBanner } from "../api";
 
 export const useBannerStore = defineStore("banner", () => {
