@@ -18,8 +18,8 @@ let { onSliderChange, onSliderInput } = usePlayerStore();
 let { currentTime, duration } = storeToRefs(usePlayerStore());
 </script>
 <style lang="scss" scoped>
-.player-slider ::v-deep {
-  .el-slider {
+.player-slider {
+  :deep(.el-slider) {
     height: 10px;
     .el-slider__runway,
     .el-slider__bar {

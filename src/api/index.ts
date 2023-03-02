@@ -1,11 +1,17 @@
 import http from "../utils/http";
 import type { Banner } from "../interface/banner";
 import type { SearchSuggest, SearchHotDetail } from "../interface/search";
-import type { Personalized } from "../interface/personalized";
+import type {
+  Personalized,
+  PersonalizedNewSong,
+  PersonalizedMv,
+  Djprogram,
+} from "../interface/personalized";
 import type { UserProfile } from "../interface/user";
 import type { TopListDetail } from "../interface/toplist_detail";
 import type { PlayListDetail } from "../interface/playlist";
 import type { Song, SongUrl } from "../interface/song";
+import type { PersonalizedPrivateContent } from "../interface/video";
 
 /**
  * @function requestBanner 请求Banner 数据
@@ -52,6 +58,24 @@ export const requestPersonalized = async () => {
   );
   return result;
 };
+
+/**
+ * @function
+ * @name requestPersonalizedNewSong 推荐新音乐
+ */
+export const requestPersonalizedNewSong = async () => {
+  const { result } = await http.get<{ result: PersonalizedNewSong[] }>(
+    "/personalized/newsong"
+  );
+  return result;
+};
+
+export async function requestPersonalizedMv() {
+  const { result } = await http.get<{ result: PersonalizedMv[] }>(
+    "personalized/mv"
+  );
+  return result;
+}
 
 /**
  * @function
@@ -119,6 +143,23 @@ export const requestPlayListTrackAll = async (id: number) => {
 
 /**
  * @function
+ * @name requestPersonalizedPrivateContentList 请求个性化私人定制相关列表
+ */
+export const requestPersonalizedPrivateContentList = async (
+  limit: number = 10,
+  offset: number = 0
+) => {
+  const { result } = await http.get<{
+    result: PersonalizedPrivateContent[];
+  }>("personalized/privatecontent/list", {
+    limit,
+    offset,
+  });
+  return result;
+};
+
+/**
+ * @function
  * @name requestSongUrl 根据id 请求歌曲播放地址
  */
 export const requestSongUrl = async (id: number) => {
@@ -128,4 +169,15 @@ export const requestSongUrl = async (id: number) => {
     id,
   });
   return data[0];
+};
+
+/**
+ * @function
+ * @name requestPersonalizedDjprogram 请求个性化Dj
+ */
+export const requestPersonalizedDjprogram = async () => {
+  const { result } = await http.get<{
+    result: Djprogram[];
+  }>("personalized/djprogram");
+  return result;
 };

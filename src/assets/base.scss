@@ -6,7 +6,7 @@ $bgc-color: rgb(181, 41, 41);
 $dbgc-color: #474648;
 
 :root {
-  // --el-color-primary: #34d399 !important;
+  --el-color-primary: #34d399 !important;
   // --el-color-primary-light-1: #065f46 !important;
   // --el-color-primary-light-2: #047857 !important;
   // --el-color-primary-light-3: #059669 !important;
@@ -23,6 +23,7 @@ $dbgc-color: #474648;
 }
 
 [class="dark"] {
+  --el-color-primary: #059669 !important;
   --el-bg-color: #474648 !important;
 }
 
@@ -37,3 +38,7 @@ body {
 /* .hover-text {
   @apply hover:text-emerald-400 cursor-pointer;
 } */
+
+.el-image {
+  display: block !important;
+}

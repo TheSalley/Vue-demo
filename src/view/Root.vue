@@ -11,7 +11,7 @@
       </div>
       <div class="flex-1 overflow-hidden">
         <el-scrollbar>
-          <div class="container mx-auto">
+          <div class="container mx-auto __bg-main">
             <RouterView />
           </div>
         </el-scrollbar>

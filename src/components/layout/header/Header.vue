@@ -1,3 +1,37 @@
+<template>
+  <div class="flex items-center justify-between h-14 __bg-main">
+    <div class="flex items-center pl-5 __text-main">
+      <IconPark
+        :icon="Left"
+        :size="iconSize"
+        :stroke-width="2"
+        class="icon-button"
+        @click="router.back()"
+      />
+      <IconPark
+        :icon="Right"
+        :size="iconSize"
+        :stroke-width="2"
+        class="icon-button"
+        @click="router.go(1)"
+      />
+      <div class="search ml-2">
+        <SearchCom />
+      </div>
+    </div>
+    <div class="flex items-center mr-5 __text-main">
+      <UserInfo />
+      <IconPark :icon="Mail" :stroke-width="2" class="icon-button" />
+      <IconPark
+        :icon="Platte"
+        :stroke-width="2"
+        class="icon-button"
+        @click="changeThemeMode"
+      />
+      <IconPark :icon="HamburgerButton" :stroke-width="2" class="icon-button" />
+    </div>
+  </div>
+</template>
 <script setup lang="ts">
 /**
  * @param {number} iconSize 图标尺寸
@@ -32,41 +66,6 @@ const changeThemeMode = () => {
 
 onMounted(() => window.document.documentElement.setAttribute("class", "light"));
 </script>
-<template>
-  <div class="flex items-center justify-between h-14">
-    <div class="flex items-center pl-5">
-      <IconPark
-        :icon="Left"
-        :size="iconSize"
-        :stroke-width="2"
-        class="icon-button"
-        @click="router.back()"
-      />
-      <IconPark
-        :icon="Right"
-        :size="iconSize"
-        :stroke-width="2"
-        class="icon-button"
-        @click="router.go(1)"
-      />
-      <div class="search ml-2">
-        <SearchCom />
-      </div>
-    </div>
-    <div class="flex items-center mr-5">
-      <UserInfo />
-      <IconPark :icon="Mail" :stroke-width="2" class="icon-button" />
-      <IconPark
-        :icon="Platte"
-        :stroke-width="2"
-        class="icon-button"
-        @click="changeThemeMode"
-      />
-      <IconPark :icon="HamburgerButton" :stroke-width="2" class="icon-button" />
-    </div>
-  </div>
-</template>
-
 <style lang="scss" scoped>
 .search {
   @apply text-xs;

@@ -1,3 +1,7 @@
+// @import "tailwindcss/base";
+// @import "tailwindcss/components";
+// @import "tailwindcss/utilities";
+
 .__bg-main {
   @apply bg-gray-50;
   @apply dark:bg-[#171718];
@@ -8,9 +12,24 @@
   @apply dark:bg-[#1e1e1f];
 }
 
+.__bg-main2 {
+  @apply bg-white;
+  @apply dark:bg-[#1e1e1f];
+}
+
 .__hover-bg-main {
   @apply hover:bg-gray-200;
   @apply dark:hover:bg-stone-700;
+}
+
+.__hover-bg-main1 {
+  @apply hover:bg-stone-100;
+  @apply dark:hover:bg-stone-800;
+}
+
+.__hover-bg-main2 {
+  @apply hover:bg-stone-100;
+  @apply dark:hover:bg-stone-800;
 }
 
 .__text-main {
@@ -18,13 +37,13 @@
   @apply dark:text-slate-200;
 }
 
-.__hover-text {
-  @apply hover:text-emerald-400 cursor-pointer;
-}
-
-.text-dc {
+.__text-main1 {
   @apply text-slate-400;
   @apply dark:text-slate-400;
+}
+
+.__hover-text {
+  @apply hover:text-emerald-400 cursor-pointer;
 }
 
 .button {

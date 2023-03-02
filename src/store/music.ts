@@ -4,7 +4,11 @@ import type {
   Personalized,
   PersonalizedNewSong,
 } from "../interface/personalized";
-import { requestPersonalized, requestTopListDetailData } from "../api";
+import {
+  requestPersonalized,
+  requestPersonalizedNewSong,
+  requestTopListDetailData,
+} from "../api";
 import { TopListDetail } from "../interface/toplist_detail";
 
 export const useMusicStore = defineStore("music", () => {
@@ -18,10 +22,17 @@ export const useMusicStore = defineStore("music", () => {
     personalized.value = await requestPersonalized();
   };
 
+  const personalizedNewSong = ref<PersonalizedNewSong[]>([]);
+  const getPersonalizedNewSong = async () => {
+    personalizedNewSong.value = await requestPersonalizedNewSong();
+  };
+
   return {
     topListDetailData,
     getTopListDetailData,
     personalized,
     getPersonalized,
+    personalizedNewSong,
+    getPersonalizedNewSong,
   };
 });

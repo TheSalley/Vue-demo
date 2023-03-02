@@ -1,8 +1,8 @@
 <template>
-  <div class="px-5">
-    <h1 class="text-3xl font-bold pt-8 pb-4">音乐馆</h1>
+  <div class="px-5 __bg-main2">
+    <h1 class="text-3xl font-bold pt-8 pb-4 __text-main">音乐馆</h1>
     <el-affix>
-      <div class="bg-view">
+      <div>
         <el-tabs v-model="currentMenu" @tab-click="onTabClick">
           <el-tab-pane
             v-for="menu in menus"

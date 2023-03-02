@@ -8,16 +8,22 @@
         class=""
         v-for="(item, index) in sampleSize(personalized, 10)"
         :key="index"
+        @click="router.push({ name: 'playlist', query: { id: item.id } })"
       >
-        <CoverPlay :name="item.name" :pic-url="item.picUrl" />
-        <div class="mt-2 text-xs __text-main">{{ item.name }}</div>
+        <CoverPlay
+          :name="item.name"
+          :pic-url="item.picUrl"
+          show-play-count
+          :play-count="item.playCount"
+        />
+        <div class="mt-2 text-xs truncate __text-main">{{ item.name }}</div>
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { onMounted } from "vue";
-import {} from "vue-router";
+import { useRouter } from "vue-router";
 import { storeToRefs } from "pinia";
 import { sampleSize } from "lodash";
 import Title from "../../components/common/Title.vue";
@@ -26,6 +32,7 @@ import { useMusicStore } from "../../store/music";
 
 const { personalized } = storeToRefs(useMusicStore());
 const { getPersonalized } = useMusicStore();
+const router = useRouter();
 
 onMounted(() => {
   getPersonalized();
